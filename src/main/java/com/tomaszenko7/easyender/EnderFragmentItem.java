@@ -48,14 +48,13 @@ public class EnderFragmentItem extends Item {
         return TypedActionResult.fail(stack);
     }
     @Override
-    public void appendTooltip(ItemStack stack, World world, java.util.List<net.minecraft.text.Text> tooltip, net.minecraft.client.item.TooltipContext context) {
-        if (net.minecraft.client.gui.screen.Screen.hasShiftDown()) {
-            tooltip.add(net.minecraft.text.Text.literal("May cause spontaneous relocation").formatted(net.minecraft.util.Formatting.DARK_PURPLE));
-        } else {
-            tooltip.add(net.minecraft.text.Text.literal("Hold Shift for more info").formatted(net.minecraft.util.Formatting.GRAY));
-        }
+    public void appendTooltip(net.minecraft.item.ItemStack stack,
+                              net.minecraft.world.World world,
+                              java.util.List<net.minecraft.text.Text> tooltip,
+                              net.minecraft.client.item.TooltipContext context) {
+        tooltip.add(net.minecraft.text.Text.translatable("item.easy_ender.ender_fragment.tooltip")
+                .formatted(net.minecraft.util.Formatting.DARK_PURPLE));
     }
-
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         ItemStack result = super.finishUsing(stack, world, user);
