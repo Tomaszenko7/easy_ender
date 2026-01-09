@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": { "item": "easy_ender:ender_fragment" },
+    "title": { "text": "Spontaneous Relocation" },
+    "description": { "text": "Eat an Ender Fragment and embrace the consequences." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "easy_ender:mine_ender_ore",
+  "criteria": {
+    "consume_fragment": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": { "items": [ "easy_ender:ender_fragment" ] }
+      }
+    }
+  },
+  "requirements": [
+    [ "consume_fragment" ]
+  ]
+}

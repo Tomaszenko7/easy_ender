@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "easy_ender:ender_ore",
+    "easy_ender:deepslate_ender_ore",
+    "easy_ender:end_ender_ore"
+  ]
+}

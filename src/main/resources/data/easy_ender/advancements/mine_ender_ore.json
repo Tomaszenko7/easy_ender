@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": { "item": "easy_ender:ender_fragment" },
+    "title": { "text": "Fragmented Reality" },
+    "description": { "text": "Obtain Ender Fragments or any Ender Ore variant." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:story/mine_stone",
+  "criteria": {
+    "get_fragment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": [ "easy_ender:ender_fragment" ] }
+        ]
+      }
+    },
+    "get_any_ender_ore_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "easy_ender:ender_ore",
+              "easy_ender:deepslate_ender_ore",
+              "easy_ender:end_ender_ore"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [ "get_fragment", "get_any_ender_ore_block" ]
+  ]
+}

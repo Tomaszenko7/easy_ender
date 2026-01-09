@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" },
+    { "item": "easy_ender:ender_fragment" }
+  ],
+  "result": {
+    "item": "minecraft:ender_pearl",
+    "count": 1
+  }
+}

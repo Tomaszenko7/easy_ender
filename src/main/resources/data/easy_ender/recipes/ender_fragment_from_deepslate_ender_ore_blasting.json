@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": { "item": "easy_ender:deepslate_ender_ore" },
+  "result": "easy_ender:ender_fragment",
+  "experience": 0.2,
+  "cookingtime": 100
+}

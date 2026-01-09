@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "easy_ender",
+	"version": "${version}",
+	"name": "Easy Ende Additionsr",
+	"description": "Easy Ender makes Ender Pearl progression for peaceful players simpler by adding Ender Ore, Ender Fragments, Dust processing, and fragment-powered random teleportation — all while staying balanced and modpack-friendly.",
+	"authors": [
+		"Tomaszenko7"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/easy-ender-additions",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT License - Copyright (c) 2026 Tomaszenko7",
+	"icon": "assets/easy_ender/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.tomaszenko7.easyender.EasyEnder"
+		]
+	},
+	"mixins": [
+		"easy_ender.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
