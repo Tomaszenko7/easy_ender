@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -17,8 +18,7 @@ public class EnderOreBlockItem extends BlockItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("item.easy_ender.ender_ore.tooltip")
-                .formatted(Formatting.DARK_PURPLE));
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("item.easy_ender.ender_ore.tooltip").formatted(Formatting.DARK_PURPLE));
     }
 }

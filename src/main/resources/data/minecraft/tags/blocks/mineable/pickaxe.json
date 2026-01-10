@@ -3,6 +3,9 @@
   "values": [
     "easy_ender:ender_ore",
     "easy_ender:deepslate_ender_ore",
-    "easy_ender:end_ender_ore"
+    "easy_ender:end_ender_ore",
+    "easy_ender:blaze_ore",
+    "easy_ender:deepslate_blaze_ore",
+    "easy_ender:nether_blaze_ore"
   ]
 }

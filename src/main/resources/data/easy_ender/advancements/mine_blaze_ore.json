@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": { "item": "easy_ender:blaze_fragment" },
+    "title": { "text": "Hey Hot Stuff" },
+    "description": { "text": "Obtain Blaze Fragments or any Blaze Ore variant." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:story/mine_stone",
+  "criteria": {
+    "get_blaze_fragment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": [ "easy_ender:blaze_fragment" ] }
+        ]
+      }
+    },
+    "get_any_blaze_ore_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "easy_ender:blaze_ore",
+              "easy_ender:deepslate_blaze_ore",
+              "easy_ender:nether_blaze_ore"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [ "get_blaze_fragment", "get_any_blaze_ore_block" ]
+  ]
+}

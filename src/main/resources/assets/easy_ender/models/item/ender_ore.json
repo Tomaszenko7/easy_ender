@@ -1,3 +1,6 @@
 {
-  "parent": "easy_ender:block/ender_ore"
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "easy_ender:block/ender_ore"
+  }
 }

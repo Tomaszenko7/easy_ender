@@ -2,12 +2,12 @@
   "fabric:load_conditions": [
     { "condition": "fabric:all_mods_loaded", "values": ["create"] }
   ],
-  "type": "create:crushing",
+  "type": "create:milling",
   "ingredients": [
-    { "item": "easy_ender:end_ender_ore" }
+    { "item": "easy_ender:blaze_fragment" }
   ],
   "results": [
-    { "item": "easy_ender:ender_dust", "count": 2 }
+    { "item": "easy_ender:blaze_dust", "count": 1 }
   ],
-  "processingTime": 200
+  "processingTime": 100
 }

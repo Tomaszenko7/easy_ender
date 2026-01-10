@@ -1,5 +1,6 @@
 package com.tomaszenko7.easyender;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -11,12 +12,17 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class EnderFragmentItem extends Item {
 
@@ -47,14 +53,12 @@ public class EnderFragmentItem extends Item {
 
         return TypedActionResult.fail(stack);
     }
+
     @Override
-    public void appendTooltip(net.minecraft.item.ItemStack stack,
-                              net.minecraft.world.World world,
-                              java.util.List<net.minecraft.text.Text> tooltip,
-                              net.minecraft.client.item.TooltipContext context) {
-        tooltip.add(net.minecraft.text.Text.translatable("item.easy_ender.ender_fragment.tooltip")
-                .formatted(net.minecraft.util.Formatting.DARK_PURPLE));
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("item.easy_ender.ender_fragment.tooltip").formatted(Formatting.DARK_PURPLE));
     }
+
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         ItemStack result = super.finishUsing(stack, world, user);

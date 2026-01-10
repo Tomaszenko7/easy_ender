@@ -2,12 +2,11 @@
   "fabric:load_conditions": [
     { "condition": "fabric:all_mods_loaded", "values": ["create"] }
   ],
-  "type": "create:crushing",
+  "type": "create:splashing",
   "ingredients": [
-    { "item": "easy_ender:ender_ore" }
+    { "item": "easy_ender:ender_slurry" }
   ],
   "results": [
     { "item": "easy_ender:ender_dust", "count": 2 }
-  ],
-  "processingTime": 200
+  ]
 }

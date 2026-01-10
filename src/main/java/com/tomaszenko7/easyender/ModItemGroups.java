@@ -17,11 +17,22 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemGroup.easy_ender"))
                     .icon(() -> new ItemStack(ModItems.ENDER_FRAGMENT))
                     .entries((context, entries) -> {
+                        //Ender items
                         entries.add(ModItems.ENDER_FRAGMENT);
                         entries.add(ModItems.ENDER_DUST);
+                        entries.add(ModItems.ENDER_SLURRY);
+                        //Ender ore items
                         entries.add(ModBlocks.ENDER_ORE_ITEM);
                         entries.add(ModBlocks.DEEPSLATE_ENDER_ORE_ITEM);
                         entries.add(ModBlocks.END_ENDER_ORE_ITEM);
+                        //Blaze items
+                        entries.add(ModItems.BLAZE_FRAGMENT);
+                        entries.add(ModItems.BLAZE_DUST);
+                        entries.add(ModItems.BLAZE_SLURRY);
+                        //Blaze ore items
+                        entries.add(ModBlocks.BLAZE_ORE_ITEM);
+                        entries.add(ModBlocks.DEEPSLATE_BLAZE_ORE_ITEM);
+                        entries.add(ModBlocks.NETHER_BLAZE_ORE_ITEM);
                     })
                     .build()
     );

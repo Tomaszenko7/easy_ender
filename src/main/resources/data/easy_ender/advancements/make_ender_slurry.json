@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": { "item": "easy_ender:ender_slurry" },
+    "title": { "text": "Into the Thick of It" },
+    "description": { "text": "Obtain Ender Slurry." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "easy_ender:mine_ender_ore",
+  "criteria": {
+    "get_ender_slurry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["easy_ender:ender_slurry"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["get_ender_slurry"]
+  ]
+}

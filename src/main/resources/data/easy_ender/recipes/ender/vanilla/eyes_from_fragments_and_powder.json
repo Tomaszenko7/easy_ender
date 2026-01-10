@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "FBF",
+    "FFF"
+  ],
+  "key": {
+    "F": { "item": "easy_ender:ender_fragment" },
+    "B": { "item": "minecraft:blaze_powder" }
+  },
+  "result": {
+    "item": "minecraft:ender_eye",
+    "count": 1
+  }
+}

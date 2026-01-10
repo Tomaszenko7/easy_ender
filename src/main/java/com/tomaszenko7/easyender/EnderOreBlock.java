@@ -22,7 +22,6 @@ public class EnderOreBlock extends ExperienceDroppingBlock {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (!world.isClient) return;
 
-        // Only hum/particles when a player is close
         boolean playerNearby = !world.getEntitiesByClass(
                 PlayerEntity.class,
                 new Box(pos).expand(8),
@@ -31,7 +30,6 @@ public class EnderOreBlock extends ExperienceDroppingBlock {
 
         if (!playerNearby) return;
 
-        // Subtle hum (rare)
         if (random.nextInt(160) == 0) {
             world.playSound(
                     pos.getX() + 0.5,
@@ -39,13 +37,12 @@ public class EnderOreBlock extends ExperienceDroppingBlock {
                     pos.getZ() + 0.5,
                     SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME,
                     SoundCategory.BLOCKS,
-                    0.25f,   // volume (quiet)
+                    0.35f,   // volume (quiet)
                     1.2f,    // pitch
                     false
             );
         }
 
-        // Soft portal particles
         for (int i = 0; i < 2; i++) {
             world.addParticle(
                     ParticleTypes.PORTAL,

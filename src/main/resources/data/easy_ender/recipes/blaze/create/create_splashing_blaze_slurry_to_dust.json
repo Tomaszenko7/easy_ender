@@ -1,0 +1,12 @@
+{
+  "fabric:load_conditions": [
+    { "condition": "fabric:all_mods_loaded", "values": ["create"] }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    { "item": "easy_ender:blaze_slurry" }
+  ],
+  "results": [
+    { "item": "easy_ender:blaze_dust", "count": 2 }
+  ]
+}

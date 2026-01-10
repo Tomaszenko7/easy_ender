@@ -3,7 +3,7 @@
 	"id": "easy_ender",
 	"version": "${version}",
 	"name": "Easy Ender Additions",
-	"description": "Easy Ender makes Ender Pearl progression for peaceful players simpler by adding Ender Ore, Ender Fragments, Dust processing, and fragment-powered random teleportation — all while staying balanced and modpack-friendly.",
+	"description": "Easy Ender Additions is a progression focused mod designed to make Ender and Blaze resources obtainable through mining, processing, and automation. It is especially useful for players who play on Peaceful difficulty or who prefer tech based progression over mob farming.",
 	"authors": [
 		"Tomaszenko7"
 	],

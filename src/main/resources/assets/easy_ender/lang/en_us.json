@@ -1,13 +1,26 @@
 {
-  "item.easy_ender.ender_fragment": "Ender Fragment",
+  "itemGroup.easy_ender": "Easy Ender",
+
   "block.easy_ender.ender_ore": "Ender Ore",
   "block.easy_ender.deepslate_ender_ore": "Deepslate Ender Ore",
-  "item.easy_ender.ender_dust": "Ender Dust",
   "block.easy_ender.end_ender_ore": "End Ender Ore",
-  "itemGroup.easy_ender": "Easy Ender",
+  "block.easy_ender.blaze_ore": "Blaze Ore",
+  "block.easy_ender.deepslate_blaze_ore": "Deepslate Blaze Ore",
+  "block.easy_ender.nether_blaze_ore": "Nether Blaze Ore",
+
+  "item.easy_ender.ender_fragment": "Ender Fragment",
+  "item.easy_ender.ender_dust": "Ender Dust",
+  "item.easy_ender.ender_slurry": "Ender Slurry",
+  "item.easy_ender.blaze_fragment": "Blaze Fragment",
+  "item.easy_ender.blaze_dust": "Blaze Dust",
+  "item.easy_ender.blaze_slurry": "Blaze Slurry",
+
   "item.easy_ender.ender_fragment.tooltip": "Warped matter from beyond space... tastes weird",
   "item.easy_ender.ender_dust.tooltip": "Still vibrating...",
+  "item.easy_ender.ender_slurry.tooltip": "It's sludgy and smells weird.",
+  "item.easy_ender.blaze_fragment.tooltip": "Hot shards.. be careful.",
+  "item.easy_ender.blaze_dust.tooltip": "Still warm...",
+  "item.easy_ender.blaze_slurry.tooltip": "A hot mess.",
   "item.easy_ender.ender_ore.tooltip": "It makes weird noises when you’re near.",
-  "item.easy_ender.deepslate_ender_ore.tooltip": "It makes weird noises when you’re near.",
-  "item.easy_ender.end_ender_ore.tooltip": "It makes weird noises when you’re near."
+  "item.easy_ender.blaze_ore.tooltip": "It crackles with heat."
 }

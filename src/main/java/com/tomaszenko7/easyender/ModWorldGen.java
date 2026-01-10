@@ -16,8 +16,14 @@ public class ModWorldGen {
     public static final RegistryKey<PlacedFeature> ENDER_ORE_END_PLACED_KEY =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(EasyEnder.MOD_ID, "ender_ore_end_placed"));
 
-    public static void register() {
+    public static final RegistryKey<PlacedFeature> BLAZE_ORE_PLACED_KEY =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(EasyEnder.MOD_ID, "blaze_ore_placed"));
 
+    public static final RegistryKey<PlacedFeature> BLAZE_ORE_NETHER_PLACED_KEY =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(EasyEnder.MOD_ID, "nether_blaze_ore_placed"));
+
+    public static void register() {
+        //Ender ore
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInOverworld(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
@@ -29,5 +35,18 @@ public class ModWorldGen {
                 GenerationStep.Feature.UNDERGROUND_ORES,
                 ENDER_ORE_END_PLACED_KEY
         );
+        //Blaze ore
+        BiomeModifications.addFeature(
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                BLAZE_ORE_PLACED_KEY
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.foundInTheNether(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                BLAZE_ORE_NETHER_PLACED_KEY
+        );
+
     }
 }

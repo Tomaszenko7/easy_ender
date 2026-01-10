@@ -4,10 +4,10 @@
   ],
   "type": "create:crushing",
   "ingredients": [
-    { "item": "easy_ender:deepslate_ender_ore" }
+    { "item": "easy_ender:nether_blaze_ore" }
   ],
   "results": [
-    { "item": "easy_ender:ender_dust", "count": 2 }
+    { "item": "easy_ender:blaze_slurry", "count": 1 }
   ],
   "processingTime": 200
 }

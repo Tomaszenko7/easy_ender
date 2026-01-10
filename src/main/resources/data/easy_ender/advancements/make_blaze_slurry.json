@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": { "item": "easy_ender:blaze_slurry" },
+    "title": { "text": "Now we're cooking." },
+    "description": { "text": "Obtain Blaze Slurry." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "easy_ender:mine_blaze_ore",
+  "criteria": {
+    "get_blaze_slurry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["easy_ender:blaze_slurry"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["get_blaze_slurry"]
+  ]
+}

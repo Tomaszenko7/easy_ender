@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": { "item": "easy_ender:nether_blaze_ore" },
+  "result": "easy_ender:blaze_fragment",
+  "experience": 0.4,
+  "cookingtime": 100
+}

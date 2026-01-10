@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": { "item": "easy_ender:blaze_dust" },
+  "result": "easy_ender:blaze_fragment",
+  "experience": 0.2,
+  "cookingtime": 100
+}

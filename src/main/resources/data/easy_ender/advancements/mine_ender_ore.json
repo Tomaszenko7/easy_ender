@@ -10,7 +10,7 @@
   },
   "parent": "minecraft:story/mine_stone",
   "criteria": {
-    "get_fragment": {
+    "get_ender_fragment": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -34,6 +34,6 @@
     }
   },
   "requirements": [
-    [ "get_fragment", "get_any_ender_ore_block" ]
+    [ "get_ender_fragment", "get_any_ender_ore_block" ]
   ]
 }

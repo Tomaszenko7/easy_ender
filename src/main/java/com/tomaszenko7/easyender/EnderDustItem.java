@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -16,11 +17,7 @@ public class EnderDustItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack,
-                              World world,
-                              List<Text> tooltip,
-                              TooltipContext context) {
-        tooltip.add(Text.translatable("item.easy_ender.ender_dust.tooltip")
-                .formatted(Formatting.DARK_PURPLE));
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("item.easy_ender.ender_dust.tooltip").formatted(Formatting.DARK_PURPLE));
     }
 }
