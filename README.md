@@ -73,7 +73,7 @@ The Nether is intended to be the main source of Blaze materials.
 Obtained by mining Ender Ore or smelting Ender Dust.  
 9 Ender Fragments can be crafted into 1 Ender Pearl.
 
-They can also be eaten. Doing so will teleport the player randomly up to 1000 blocks, play Enderman effects, deal Ender Pearl style damage, apply nausea for 10 seconds, and cannot kill the player. This can get you out of trouble at a drop of a hat.
+They can also be eaten. Doing so will teleport the player randomly (within loaded chunks), play Enderman effects, deal Ender Pearl style damage, apply nausea for 10 seconds, and cannot kill the player. This can get you out of trouble at a drop of a hat.
 
 ### Blaze Fragments
 Obtained by mining Blaze Ore or smelting Blaze Dust.  

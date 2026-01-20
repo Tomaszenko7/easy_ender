@@ -18,10 +18,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.Heightmap;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
 import java.util.List;
 
 public class EnderFragmentItem extends Item {
@@ -50,7 +48,6 @@ public class EnderFragmentItem extends Item {
             user.setCurrentHand(hand);
             return TypedActionResult.consume(stack);
         }
-
         return TypedActionResult.fail(stack);
     }
 
@@ -91,7 +88,6 @@ public class EnderFragmentItem extends Item {
                 player.getItemCooldownManager().set(this, COOLDOWN_TICKS);
             }
         }
-
         return result;
     }
 
@@ -122,30 +118,56 @@ public class EnderFragmentItem extends Item {
     private static TeleportTarget findRandomSafeTarget(ServerPlayerEntity player, ServerWorld world) {
         double startX = player.getX();
         double startZ = player.getZ();
+        int startY = player.getBlockY();
+
+        BlockPos.Mutable mutable = new BlockPos.Mutable();
+
+        boolean hasCeiling = world.getDimension().hasCeiling();
 
         for (int i = 0; i < MAX_ATTEMPTS; i++) {
             int dx = world.getRandom().nextBetween(-TELEPORT_RADIUS, TELEPORT_RADIUS);
             int dz = world.getRandom().nextBetween(-TELEPORT_RADIUS, TELEPORT_RADIUS);
-
             int targetX = MathHelper.floor(startX) + dx;
             int targetZ = MathHelper.floor(startZ) + dz;
+            mutable.set(targetX, 64, targetZ);
+            if (!world.getWorldBorder().contains(mutable)) continue;
+            int chunkX = targetX >> 4;
+            int chunkZ = targetZ >> 4;
+            if (world.getChunk(chunkX, chunkZ, net.minecraft.world.chunk.ChunkStatus.FULL, false) == null) continue;
+            int y;
+            if (hasCeiling) {
+                int maxY = Math.min(world.getTopY() - 2, 120); // stay below bedrock roof zone
+                int minY = world.getBottomY() + 2;
+                y = MathHelper.clamp(startY + world.getRandom().nextBetween(-32, 32), minY, maxY);
+                boolean found = false;
+                for (int scan = 0; scan < 48 && y > minY; scan++, y--) {
+                    if (isSafeSpot(world, mutable, targetX, y, targetZ)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) continue;
 
-            if (!world.getWorldBorder().contains(new BlockPos(targetX, 64, targetZ))) continue;
+            } else {
+                y = world.getTopY(net.minecraft.world.Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, targetX, targetZ);
+                if (!isSafeSpot(world, mutable, targetX, y, targetZ)) continue;
+            }
 
-            int topY = world.getTopY(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, targetX, targetZ);
-            BlockPos feet = new BlockPos(targetX, topY, targetZ);
-
-            if (!world.getBlockState(feet).isAir()) continue;
-            if (!world.getBlockState(feet.up()).isAir()) continue;
-
-            BlockPos below = feet.down();
-            if (!world.getBlockState(below).isSolidBlock(world, below)) continue;
-            if (!world.getFluidState(below).isEmpty()) continue;
-
-            return new TeleportTarget(targetX + 0.5, topY, targetZ + 0.5);
+            return new TeleportTarget(targetX + 0.5, y, targetZ + 0.5);
         }
-
         return null;
+    }
+
+    private static boolean isSafeSpot(ServerWorld world, BlockPos.Mutable mutable, int x, int y, int z) {
+        mutable.set(x, y, z);
+        if (!world.getBlockState(mutable).isAir()) return false;
+        mutable.set(x, y + 1, z);
+        if (!world.getBlockState(mutable).isAir()) return false;
+        mutable.set(x, y - 1, z);
+        var stateBelow = world.getBlockState(mutable);
+        if (!stateBelow.isSolidBlock(world, mutable)) return false;
+        if (!world.getFluidState(mutable).isEmpty()) return false;
+        return !stateBelow.isOf(net.minecraft.block.Blocks.BEDROCK);
     }
 
     private record TeleportTarget(double x, double y, double z) {}

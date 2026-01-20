@@ -1,3 +1,18 @@
+## v1.2.1
+
+### Added
+
+### Fixes
+- Reduced ore Model Complexity by removing internal faces (performance).
+- Clamped ore Model bounds within 0.16 (performance).
+- Added cull-face to boundary faces of ore Models (performance).
+- Minified ore Model JSON (performance).
+- Changed Ender Fragment TeleportTarget method to only teleport to already loaded chunks, vastly improving teleport performance.
+- Fixed Ender Fragment Teleport in Nether so you no longer end up on the Bedrock ceiling!
+
+### Balances
+_________________________
+
 ## v1.2.0 – Version 1.2 Release!
 
 ### Added
@@ -23,7 +38,7 @@
 ### Fixes
 
 - Fixed some advancement triggers to allow for new Blaze mechanics advancements.
-- Moved all tooltips and names into language file and moved to keys for item tooltips to allow for easier additions in future.
+- Moved all tooltips and names into language file and moved to keys for item tooltips to allow for easier additions in the future.
 - Asset/folder clean-up.
 - Class clean-up/organise.
 
