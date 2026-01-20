@@ -1,7 +1,5 @@
 ## v1.2.1
 
-### Added
-
 ### Fixes
 - Reduced ore Model Complexity by removing internal faces (performance).
 - Clamped ore Model bounds within 0.16 (performance).
@@ -10,7 +8,6 @@
 - Changed Ender Fragment TeleportTarget method to only teleport to already loaded chunks, vastly improving teleport performance.
 - Fixed Ender Fragment Teleport in Nether so you no longer end up on the Bedrock ceiling!
 
-### Balances
 _________________________
 
 ## v1.2.0 – Version 1.2 Release!
